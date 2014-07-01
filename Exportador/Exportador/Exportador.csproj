@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D8AE7F3-F49F-4C84-8F23-5E5A5833A4C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Exportador</RootNamespace>
+    <AssemblyName>Exportador</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\AL-WI3\Desktop\exporter\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>858DB9F50A0589F78742DDF96C61BFA36DDAC5E9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Exportador_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.Firebird, Version=1.6.3.0, Culture=neutral, PublicKeyToken=e1b4f92304d7b12f">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\FirebirdSql.Data.Firebird.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>References\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Academico\Aluno\ExportadorSAluno.cs" />
+    <Compile Include="Academico\Curso\Curso.cs" />
+    <Compile Include="Academico\Curso\ExportadorCurso.cs" />
+    <Compile Include="Academico\Disciplina\Disciplina.cs" />
+    <Compile Include="Academico\Disciplina\ExportadorDisciplina.cs" />
+    <Compile Include="Academico\DocumentoAluno\DocumentoAluno.cs" />
+    <Compile Include="Academico\DocumentoAluno\ExportadorDocAluno.cs" />
+    <Compile Include="Academico\Documento\Documento.cs" />
+    <Compile Include="Academico\Documento\ExportadorDocumento.cs" />
+    <Compile Include="Academico\Matricula\HabilitacaoAluno\ExportadorHabilitacaoAluno.cs" />
+    <Compile Include="Academico\Matricula\HabilitacaoAluno\HabilitacaoAluno.cs" />
+    <Compile Include="Academico\MatrizAplicada\ExportadorHabilitacaoFilial.cs" />
+    <Compile Include="Academico\MatrizAplicada\HabilitacaoFilial.cs" />
+    <Compile Include="Academico\MatrizCurricular\DisciplinaGrade\DisciplinaGrade.cs" />
+    <Compile Include="Academico\MatrizCurricular\DisciplinaGrade\ExportadorDisciplinaGrade.cs" />
+    <Compile Include="Academico\MatrizCurricular\Grade\ExportadorGrade.cs" />
+    <Compile Include="Academico\MatrizCurricular\Grade\Grade.cs" />
+    <Compile Include="Academico\Habilitacao\ExportadorSHabilitacao.cs" />
+    <Compile Include="Academico\Aluno\Aluno.cs" />
+    <Compile Include="Academico\Habilitacao\Habilitacao.cs" />
+    <Compile Include="Academico\Horario\ExportadorHorario.cs" />
+    <Compile Include="Academico\Horario\Horario.cs" />
+    <Compile Include="Academico\MatrizCurricular\Periodo\ExportadorPeriodo.cs" />
+    <Compile Include="Academico\MatrizCurricular\Periodo\Periodo.cs" />
+    <Compile Include="Academico\ParamCurso\ExportadorParamsPorCurso.cs" />
+    <Compile Include="Academico\ParamCurso\ParamsPorCurso.cs" />
+    <Compile Include="Academico\PeriodoLetivo\ExportadorPeriodoLetivo.cs" />
+    <Compile Include="Academico\PeriodoLetivo\PeriodoLetivo.cs" />
+    <Compile Include="Academico\Pessoa\Estado.cs" />
+    <Compile Include="Academico\Pessoa\ExportadorPessoa.cs" />
+    <Compile Include="Academico\Pessoa\Pais.cs" />
+    <Compile Include="Academico\Pessoa\Ocupacao.cs" />
+    <Compile Include="Academico\Pessoa\Profissao.cs" />
+    <Compile Include="Academico\Professor\ExportadorProfessor.cs" />
+    <Compile Include="Academico\Professor\Professor.cs" />
+    <Compile Include="Academico\Turma\Turma\ExportadorTurma.cs" />
+    <Compile Include="Academico\Turma\Turma\Turma.cs" />
+    <Compile Include="Academico\Turno\ExportadorTurno.cs" />
+    <Compile Include="Academico\Turno\Turno.cs" />
+    <Compile Include="ApplicationSingleton.cs" />
+    <Compile Include="BackOffice\CentroCusto\CentroCusto.cs" />
+    <Compile Include="BackOffice\CentroCusto\ExportadorCentroCusto.cs" />
+    <Compile Include="BackOffice\ClienteFornecedor\ExportadorClienteFornecedor.cs" />
+    <Compile Include="BackOffice\ClienteFornecedor\ClienteFornecedor.cs" />
+    <Compile Include="BackOffice\PlanoContas\ExportadorPlanoContas.cs" />
+    <Compile Include="BackOffice\PlanoContas\PlanoContas.cs" />
+    <Compile Include="BusinessException.cs" />
+    <Compile Include="DAO\AlunoDAO.cs" />
+    <Compile Include="DAO\DisciplinaDAO.cs" />
+    <Compile Include="DAO\GradeDAO.cs" />
+    <Compile Include="DAO\MunicipioDAO.cs" />
+    <Compile Include="DAO\ClienteDAO.cs" />
+    <Compile Include="DAO\CursoDAO.cs" />
+    <Compile Include="DAO\EstadoDAO.cs" />
+    <Compile Include="DAO\NacaoDAO.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="Academico\Pessoa\Nacionalidade.cs" />
+    <Compile Include="DAO\NacionalidadeDAO.cs" />
+    <Compile Include="DAO\OcupacaoDAO.cs" />
+    <Compile Include="DAO\ProfissaoDAO.cs" />
+    <Compile Include="DAO\TurnoDAO.cs" />
+    <Compile Include="Helpers\ConnectionStringHelper.cs" />
+    <Compile Include="Helpers\DBHelper.cs" />
+    <Compile Include="DAO\HorarioDAO.cs" />
+    <Compile Include="Decimal2Converter.cs" />
+    <Compile Include="Decimal4Converter.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Helpers\ControlHelpers.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Lancamentos\ExportadorLancamentos.cs" />
+    <Compile Include="Interface\IExportador.cs" />
+    <Compile Include="Lancamentos\ItemArquivoLancamento.cs" />
+    <Compile Include="Lancamentos\ItemArquivoLancamentoContabilizacao.cs" />
+    <Compile Include="Lancamentos\ItemArquivoLancamentoRateioCentroCusto.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Academico\Pessoa\Pessoa.cs" />
+    <Compile Include="Log\Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RH\Cargo\Cargo.cs" />
+    <Compile Include="RH\Cargo\ExportadorCargo.cs" />
+    <Compile Include="RH\Dependente\Dependente.cs" />
+    <Compile Include="RH\Dependente\ExportadorDependente.cs" />
+    <Compile Include="RH\Funcao\ExportadorFuncao.cs" />
+    <Compile Include="RH\Funcao\Funcao.cs" />
+    <Compile Include="RH\Funcionario\ExportadorFichaFinanceira.cs" />
+    <Compile Include="RH\Funcionario\ExportadorFuncionario.cs" />
+    <Compile Include="RH\Funcionario\FichaFinanceira.cs" />
+    <Compile Include="RH\Funcionario\Funcionario.cs" />
+    <Compile Include="RH\Historicos\Afastamentos.cs" />
+    <Compile Include="RH\Historicos\ContribuicaoSindical.cs" />
+    <Compile Include="RH\Historicos\Endereco.cs" />
+    <Compile Include="RH\Historicos\ExportadorAfastamentos.cs" />
+    <Compile Include="RH\Historicos\ExportadorContribuicaoSindical.cs" />
+    <Compile Include="RH\Historicos\ExportadorFuncoes.cs" />
+    <Compile Include="RH\Historicos\ExportadorHistEnderecos.cs" />
+    <Compile Include="RH\Historicos\ExportadorHistHorarios.cs" />
+    <Compile Include="RH\Historicos\ExportadorHistSecoes.cs" />
+    <Compile Include="RH\Historicos\ExportadorOcorrenciaSEFIP.cs" />
+    <Compile Include="RH\Historicos\ExportadorSalarios.cs" />
+    <Compile Include="RH\Historicos\ExportadorSituacoes.cs" />
+    <Compile Include="RH\Historicos\Funcoes.cs" />
+    <Compile Include="RH\Historicos\Horarios.cs" />
+    <Compile Include="RH\Historicos\OcorrenciaSEFIP.cs" />
+    <Compile Include="RH\Historicos\Salarios.cs" />
+    <Compile Include="RH\Historicos\Secoes.cs" />
+    <Compile Include="RH\Historicos\Situacoes.cs" />
+    <Compile Include="RH\Horario\BatidasNormais.cs" />
+    <Compile Include="RH\Horario\DiaSemBatida.cs" />
+    <Compile Include="RH\Horario\ExportadorHorarios.cs" />
+    <Compile Include="RH\Horario\IdentificacaoHorario.cs" />
+    <Compile Include="RH\Horario\Intervalo.cs" />
+    <Compile Include="RH\PeriodoFerias\ExportadorPeriodoFerias.cs" />
+    <Compile Include="RH\PeriodoFerias\PeriodoFerias.cs" />
+    <Compile Include="RH\Secao\ExportadorSecao.cs" />
+    <Compile Include="RH\Secao\Secao.cs" />
+    <Compile Include="VO\Municipio.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Exportador_TemporaryKey.pfx" />
+    <None Include="References\Layouts\LayoutImportacaoBaixa.docx" />
+    <None Include="References\Layouts\LayoutImportacaoLancamento.docx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="References\fbembed.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="References\FileHelpers.dll" />
+    <Content Include="References\FirebirdSql.Data.Firebird.dll" />
+    <Content Include="References\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="References\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="References\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="References\Microsoft.Practices.Unity.dll" />
+    <Content Include="References\Microsoft.Practices.Unity.Interception.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FileHelpers\FileHelpers.csproj">
+      <Project>{eb8633ff-ceed-40ee-8d1a-ca1bf5678c42}</Project>
+      <Name>FileHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstrato\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
