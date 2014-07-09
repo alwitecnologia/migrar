@@ -15,6 +15,7 @@ using Exportador.DAO;
 using Exportador.Academico.Pessoa;
 using System.Configuration;
 using FirebirdSql.Data.FirebirdClient;
+using System.Data.SqlClient;
 
 namespace Exportador.Academico.Professor
 {
@@ -30,6 +31,8 @@ namespace Exportador.Academico.Professor
         private bool error;
         private bool _debugMode;
         private List<Estado> estados;
+        private string _sicaConnStr = ConfigurationManager.ConnectionStrings["SICA"].ConnectionString;
+        private string _rubiConnStr = ConfigurationManager.ConnectionStrings["VetoRH"].ConnectionString;
 
         #endregion
 
@@ -144,6 +147,14 @@ namespace Exportador.Academico.Professor
 	                                UFCARTTRAB
                                 from PPESSOA";
 
+        private string _queryTitulacao = @"select case usu_tiptit
+	                                            when 0 then null
+	                                            when 5 then 4
+	                                            else usu_tiptit
+	                                            end
+                                            from vetorh.r034fun
+                                            where REPLICATE('0',(11-LEN(numcpf)))+cast(numcpf as varchar(11))=@numcpf";
+
         #endregion
 
         private void workerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -243,7 +254,7 @@ namespace Exportador.Academico.Professor
                 p.SerieCartTrab = value.SerieCartTrab;
                 p.UFCartTrab = value.UFCartTrab;
 
-                
+                p.Titulacao = buscarTitulacao(p.CPF);                
 
                 p.CodColigada = 1;                
             }
@@ -255,6 +266,40 @@ namespace Exportador.Academico.Professor
             return p;                       
         }
 
+        private string buscarTitulacao(string cpf)
+        {
+            string titulacao = string.Empty;
+
+            using (DbConnection connection = new SqlConnection(_rubiConnStr))
+            {
+                DbCommand command = connection.CreateCommand();
+                command.CommandText = _queryTitulacao;
+                command.CommandType = CommandType.Text;
+
+                try
+                {
+                    connection.Open();
+
+                    command.Parameters.Add(new SqlParameter("numcpf", cpf));
+
+                    var vTitulacao = command.ExecuteScalar();
+
+                    if (vTitulacao != null)
+                    {
+                        titulacao = vTitulacao.ToString();    
+                    }                    
+
+                }
+                catch (Exception ex)
+                {
+                    error = true;
+                    _bgWorker.ReportProgress(0, string.Format("Erro desconhecido: {0}", ex.Message));
+                }
+            }
+
+            return titulacao;
+        }
+
         private bool buscarProfessores(List<Professor> professores, List<Professor> pessoaRM)
         {
             bool error = false;
@@ -263,9 +308,7 @@ namespace Exportador.Academico.Professor
 
             _bgWorker.ReportProgress(0, string.Format("Gerando Pessoas no SICA..."));
 
-            string connStr = ConfigurationManager.ConnectionStrings["SICA"].ConnectionString;
-
-            using (DbConnection connection = new FbConnection(connStr))
+            using (DbConnection connection = new FbConnection(_sicaConnStr))
             {
                 DbCommand command = connection.CreateCommand();
                 command.CommandText = _queryProfessores;
@@ -288,6 +331,7 @@ namespace Exportador.Academico.Professor
                         p = Converter(drProfessores, pessoaRM, processedRecords, totalRecords);
 
                         if (p.CPF != null)
+
                             professores.Add(p);
                         else
                         {

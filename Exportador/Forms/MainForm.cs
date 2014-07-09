@@ -1105,17 +1105,11 @@ namespace FileHelpers
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            /*List<IExportador> filaExportacao = new List<IExportador>();
+            List<IExportador> filaExportacao = new List<IExportador>();
 
             filaExportacao.Add(ExportarProfessor());
 
             bgWorker.RunWorkerAsync(filaExportacao);
-             * */
-
-            DateTime dtIni = new DateTime(2005, 12,22);
-            DateTime dtFim = new DateTime(2006, 01,21);
-
-            MessageBox.Show((dtFim - dtIni).ToString());
         }
 
     }

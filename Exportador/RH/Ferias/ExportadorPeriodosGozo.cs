@@ -207,6 +207,8 @@ namespace Exportador.RH.Ferias
                 lnperiodos.PeriodoAntecipado = periodos["PeriodoAntecipado"].ToString();
                 lnperiodos.NroDiasFeriado = periodos["NroDiasFeriado"].ToString();
 
+                lnperiodos.NroDiasFeriado = "";
+
                 lnperiodos.EndLine = String.Empty;
 
                 lperiodos.Add(lnperiodos);
